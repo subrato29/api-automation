@@ -1,13 +1,15 @@
 package testscripts;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.*;
 import io.restassured.response.Response;
-import junit.framework.Assert;
+import static io.restassured.matcher.RestAssuredMatchers.*;
+import static org.hamcrest.Matchers.*;
 
 public class TC01_GET {
-	String url = "http://localhost:3030/";
+	String url = "http://localhost:3030/products";
 	@Test
 	public void test_01() {
 		Response response = get(url);
@@ -25,7 +27,32 @@ public class TC01_GET {
 		given()
 			.get(url)
 		.then()
-			.statusCode(200);
+			.statusCode(200)
+			.body("data.id[0]", equalTo(43900));
 	}
 	
+	@Test
+	public void test_03() {
+		given()
+			.get(url)
+		.then()
+			.statusCode(200)
+			.log().all();
+	}
+	
+	@Test
+	public void test_04() {
+		given()
+			.get(url)
+		.then()
+			.statusCode(200)
+			.body("data.name", hasItems("Duracell - AAA Batteries (4-Pack)", "Energizer - MAX Batteries AA (4-Pack)"));
+	}
+	
+	@Test
+	public void test_05() {
+		given()
+			.header("Content-Type", "application/json")
+			.get(url);
+	}
 }
