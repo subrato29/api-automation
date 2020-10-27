@@ -11,14 +11,14 @@ public class TC02_POST {
 	@Test
 	public void test_01() {
 		JSONObject request = new JSONObject();
-		
-		request.put("name", "new_product");
-		request.put("type", "goods_type");
-		request.put("price", 800);
-		request.put("shipping", 90);
+				
+		request.put("name", "brand_new_product");
+		request.put("type", "goods_type_xx");
+		request.put("price", 2000);
+		request.put("shipping", 200);
 		request.put("upc", "upcxysx");
-		request.put("description", "best_quality_product");
-		request.put("model", "model1234");
+		request.put("description", "best_quality_product_xx");
+		request.put("model", "model456");
 			
 		System.out.println(request);
 		

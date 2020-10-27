@@ -34,11 +34,12 @@ public class TC01_GET {
 	@Test
 	public void test_03() {
 		given()
+			.param("type", "goods_type")
 			.get(url)
 		.then()
 			.statusCode(200)
 			.log().all();
-	}
+	}	
 	
 	@Test
 	public void test_04() {
@@ -47,7 +48,7 @@ public class TC01_GET {
 		.then()
 			.statusCode(200)
 			.body("data.name", hasItems("Duracell - AAA Batteries (4-Pack)", "Energizer - MAX Batteries AA (4-Pack)"));
-	}
+	}	
 	
 	@Test
 	public void test_05() {
