@@ -11,7 +11,7 @@ public class TC02_POST {
 	@Test
 	public void test_01() {
 		JSONObject request = new JSONObject();
-				
+					
 		request.put("name", "brand_new_product");
 		request.put("type", "goods_type_xx");
 		request.put("price", 2000);

@@ -30,7 +30,7 @@ public class TC01_GET {
 			.statusCode(200)
 			.body("data.id[0]", equalTo(43900));
 	}
-	
+		
 	@Test
 	public void test_03() {
 		given()

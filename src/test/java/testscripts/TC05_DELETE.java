@@ -12,7 +12,7 @@ public class TC05_DELETE {
 	public void test_01() {
 		given()
 	    .when()
-			.delete(url + "9999681")
+			.delete(url + "9999737")
 		.then()
 			.statusCode(404)
 			.log().status();
